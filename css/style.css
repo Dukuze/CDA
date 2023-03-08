@@ -1,0 +1,98 @@
+.biv {
+color: rgb(86, 86, 94);
+text-decoration: underline rgb(81, 81, 87);
+text-align : center;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.biv {
+
+    border:rgb(86, 86, 94);
+    border-style: double;
+box-shadow:1px 1px 0px rgb(75, 75, 78);
+}
+
+.biv:hover{
+    color: blue;
+}
+
+
+.bd {
+
+    box-shadow:1px 1px 0px rgb(86, 86, 94);
+
+}
+
+.bd:hover{
+    color: blue;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+
+/* Article feuille Css */
+
+.js {
+    color: rgb(255, 136, 04);
+    text-decoration: underline rgb(81, 81, 87);
+    text-align : center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    
+    }
+    
+    .js {
+    
+        border:rgb(86, 86, 94);
+        border-style: double;
+    box-shadow:1px 1px 0px rgb(75, 75, 78); 
+ 
+}
+    
+    .js:hover{
+        color: rgb(241, 0, 0);
+    }
+
+
+    .bs:active{
+        color: rgb(3, 114, 3);
+    }
+        
+    .bs {
+
+        box-shadow:1px 1px 0px rgb(86, 86, 94);
+    
+    }
+    
+    .bs:hover{
+        color: blue;
+    }
+    
+    .jd{
+        text-align : center;
+
+    }
+
+    .ab {
+
+        border:rgb(86, 86, 94);
+        border-style: double;
+    box-shadow:1px 1px 0px rgb(75, 75, 78);
+    }
+
+.bk {
+    background-image:url(../img/jesko.png);
+    background-position: center;  
+    background-repeat: no-repeat;
+    color: whitesmoke;
+    font-weight : bold;
+    /* font-size: 3em; */
+    /* Police de l'exercice trop grande pour ma mise en page */
+
+}

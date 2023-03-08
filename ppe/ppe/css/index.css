@@ -1,0 +1,27 @@
+.connexion{
+  position:absolute;
+  bottom: 0;
+  width: 400px;
+  height:40px;
+  display:none;
+  top:0px;
+  left:250px;
+}
+.insccription{
+   display: none;
+   position:fixed;
+   width:60%;
+   height:40%;
+   margin-left: 20%;
+   margin-right: 20%;
+   margin-top:30%;
+   margin-bottom:30%;
+   background-color: rgba(200,200,200,0.6);
+   text-align:center;
+   border:1px solid #00f;
+ }
+.labelConnection{
+	display:block;
+	color:#000;
+	margin:5px;
+}
