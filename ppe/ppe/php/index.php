@@ -15,6 +15,16 @@ if(empty($_SESSION))
   <title></title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+  <!-- Background -->
+  <style type="text/css">
+body{
+background:url('/img//alpes1.jpg');
+background-size: cover;
+background-attachment: fixed;
+background-position: 0% 0%;
+}
+</style>
+
 </head>
 <body>
 
@@ -34,23 +44,31 @@ if(empty($_SESSION))
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
+
         <li class="nav-item active">
-          <a class="nav-link" href="index.php?index=accueil">Accueil <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="accueil.php?accueil=accueil">Accueil <span class="sr-only">(current)</span></a>
         </li>
 
 <!-- Découpage de la barre de navigation par type de profil -->
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Encadrent
-          </a>
 
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="animation.php">Consulter et Enregistrer une Animation</a>
-            <a class="dropdown-item" href="activite.php">Consulter et Enregistrer une Activité</a>
-            <a class="dropdown-item" href="annuler_act.php">Annuler une Activité</a>
-          </div>
-        </li>
+<?php
+
+if (isset($_SESSION['TYPEPROFIL']) && $_SESSION['TYPEPROFIL'] === 'EN') {
+    echo '<li class="nav-item dropdown">';
+    echo '<a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+    echo 'Encadrent';
+    echo '</a>';
+    echo '<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">';
+    echo '<a class="dropdown-item" href="animation.php">Consulter et Enregistrer une Animation</a>';
+    echo '<a class="dropdown-item" href="activite.php">Consulter et Enregistrer une Activité</a>';
+    echo '<a class="dropdown-item" href="annuler_act.php">Annuler une Activité</a>';
+    echo '</div>';
+    echo '</li>';
+}
+?>
+
+
         
 
         <li class="nav-item dropdown">
@@ -67,16 +85,14 @@ if(empty($_SESSION))
         <li class="nav-item">
           <a class="nav-link" href="participant.php">Participants</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="connexion.php">Connexion</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Utilisateur
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="index.php?index=profil">Profil</a>
-            
+          <a class="dropdown-item" href="
+          <?php echo empty($_SESSION) ? 'connexion.php' : 'index.php?index=profil'; ?>">
+          <?php echo empty($_SESSION) ? 'Connexion' : 'Profil'; ?>
             <?php
             if(empty($_SESSION))
             {
@@ -84,7 +100,7 @@ if(empty($_SESSION))
             }
             else{
 
-              echo "<form method=\"get\" action=\"logout.php\"><a class=\"dropdown-item\" href=\"connexion.php\">Deconnexion</a>
+              echo "<form method=\"get\" action=\"logout.php\"><a class=\"dropdown-item\" href=\"accueil.php\">Deconnexion</a>
               </form>";
 
             }
@@ -101,8 +117,8 @@ if(empty($_SESSION))
 
 
     switch ($_GET['index']) {
-      case 'accueil':
-      include("accueil.php");
+      case 'index':
+      include("index.php");
       break;
       case 'animation':
       include("animation.php");

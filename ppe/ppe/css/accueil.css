@@ -1,0 +1,25 @@
+body{
+    background:url('/img//alpes1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 0% 0%;
+    }
+    
+    .text-whitesmoke {
+        color: whitesmoke
+    }
+    
+    /* Carousel Css */
+    .carousel-inner > .item > img,
+      .carousel-inner > .item > a > img {
+        width: 70%;
+        margin: auto;
+      }
+    
+      /* Text Align */
+    .text-align {
+        text-align: center;
+    }
+
+
+    
